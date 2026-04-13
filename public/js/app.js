@@ -165,11 +165,16 @@
       const front = document.getElementById('dailyFront');
       if (front) {
         front.innerHTML = `
-          <div class="card-numeral">${card.numeral}</div>
-          <div class="card-symbol">${card.symbol}</div>
-          <div class="card-name">${getCardName(card)}</div>
-          <div class="card-keyword">${getCardKeywords(card)[0]}</div>
           ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
+          <div class="card-numeral">${card.numeral}</div>
+          <div class="card-art-frame">
+            <div class="card-symbol">${card.symbol}</div>
+            ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+          </div>
+          <div class="card-title-band">
+            <div class="card-name">${getCardName(card)}</div>
+            <div class="card-keyword">${getCardKeywords(card)[0]}</div>
+          </div>
         `;
       }
       const msg = document.getElementById('dailyMessage');
@@ -266,11 +271,16 @@
     const keywords = getCardKeywords(card);
     return `
       <div class="card-face card-front">
-        <div class="card-numeral">${card.numeral}</div>
-        <div class="card-symbol">${card.symbol}</div>
-        <div class="card-name">${displayName}</div>
-        <div class="card-keyword">${keywords[0]}</div>
         ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
+        <div class="card-numeral">${card.numeral}</div>
+        <div class="card-art-frame">
+          <div class="card-symbol">${card.symbol}</div>
+          ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+        </div>
+        <div class="card-title-band">
+          <div class="card-name">${displayName}</div>
+          <div class="card-keyword">${keywords[0]}</div>
+        </div>
       </div>`;
   }
 
@@ -307,16 +317,19 @@
 
       const card = drawCards(1)[0];
       const front = document.getElementById('dailyFront');
-      front.innerHTML = buildCardFront(card).replace('<div class="card-face card-front">', '').replace('</div>\n', '');
-      // Re-render front properly
       const displayName = getCardName(card);
       const keywords = getCardKeywords(card);
       front.innerHTML = `
-        <div class="card-numeral">${card.numeral}</div>
-        <div class="card-symbol">${card.symbol}</div>
-        <div class="card-name">${displayName}</div>
-        <div class="card-keyword">${keywords[0]}</div>
         ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
+        <div class="card-numeral">${card.numeral}</div>
+        <div class="card-art-frame">
+          <div class="card-symbol">${card.symbol}</div>
+          ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+        </div>
+        <div class="card-title-band">
+          <div class="card-name">${displayName}</div>
+          <div class="card-keyword">${keywords[0]}</div>
+        </div>
       `;
       this.classList.add('revealed');
 
