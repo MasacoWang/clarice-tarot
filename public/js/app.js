@@ -164,12 +164,12 @@
       const dailyCardEl = document.getElementById('dailyCard');
       const front = document.getElementById('dailyFront');
       if (front) {
+        const artSvg = window.CardArt ? window.CardArt.generateSVG(card, currentDeck) : `<div class="card-symbol">${card.symbol}</div>`;
         front.innerHTML = `
           ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
           <div class="card-numeral">${card.numeral}</div>
           <div class="card-art-frame">
-            <div class="card-symbol">${card.symbol}</div>
-            ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+            ${artSvg}
           </div>
           <div class="card-title-band">
             <div class="card-name">${getCardName(card)}</div>
@@ -269,13 +269,13 @@
   function buildCardFront(card) {
     const displayName = getCardName(card);
     const keywords = getCardKeywords(card);
+    const artSvg = window.CardArt ? window.CardArt.generateSVG(card, currentDeck) : `<div class="card-symbol">${card.symbol}</div>`;
     return `
       <div class="card-face card-front">
         ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
         <div class="card-numeral">${card.numeral}</div>
         <div class="card-art-frame">
-          <div class="card-symbol">${card.symbol}</div>
-          ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+          ${artSvg}
         </div>
         <div class="card-title-band">
           <div class="card-name">${displayName}</div>
@@ -319,12 +319,12 @@
       const front = document.getElementById('dailyFront');
       const displayName = getCardName(card);
       const keywords = getCardKeywords(card);
+      const artSvg = window.CardArt ? window.CardArt.generateSVG(card, currentDeck) : `<div class="card-symbol">${card.symbol}</div>`;
       front.innerHTML = `
         ${card.isReversed ? `<div class="reversed-badge">${t('card_reversed')}</div>` : ''}
         <div class="card-numeral">${card.numeral}</div>
         <div class="card-art-frame">
-          <div class="card-symbol">${card.symbol}</div>
-          ${card.element ? `<span class="card-element">${card.element}</span>` : ''}
+          ${artSvg}
         </div>
         <div class="card-title-band">
           <div class="card-name">${displayName}</div>

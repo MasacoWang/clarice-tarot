@@ -369,9 +369,7 @@ section { position: relative; z-index: 1; padding: 100px 20px; }
   align-items: center; justify-content: center;
   width: calc(100% - 28px); margin: 4px 14px;
   border: 2px solid #C4A97D; border-radius: 3px;
-  background:
-    radial-gradient(ellipse at center, rgba(245,235,210,0.6) 0%, rgba(230,218,190,0.3) 60%, transparent 100%),
-    linear-gradient(180deg, #F0E8D4 0%, #E6DABC 40%, #DDD0B2 100%);
+  background: #EDE4D0;
   position: relative; overflow: hidden;
   min-height: 0;
   box-shadow: inset 0 1px 4px rgba(0,0,0,0.08);
@@ -383,6 +381,12 @@ section { position: relative; z-index: 1; padding: 100px 20px; }
   border: 1px solid rgba(196, 169, 125, 0.35);
   border-radius: 2px;
   pointer-events: none;
+  z-index: 1;
+}
+.card-front .card-art-frame svg {
+  width: 100%; height: 100%;
+  display: block;
+  position: absolute; inset: 0;
 }
 .card-front .card-art-frame .card-symbol {
   font-size: 3.2rem;
