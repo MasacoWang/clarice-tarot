@@ -335,8 +335,31 @@
 
       setTimeout(() => {
         const msg = document.getElementById('dailyMessage');
+        const meaning = card.isReversed ? getCardReversed(card) : getCardUpright(card);
+        const displayName = getCardName(card);
+        const keywords = getCardKeywords(card);
+        const symbolism = getCardSymbolism(card);
+
+        let extraInfo = '';
+        if (currentDeck === 'thoth' && card.qabalah) {
+          extraInfo = `<div class="qabalah-info">🌿 <strong>${t('modal_qabalah')}:</strong> ${card.qabalah} · <strong>${t('modal_astrology')}:</strong> ${card.astrology}</div>`;
+        }
+
         msg.innerHTML = `
-          ${buildInterpCard(card, t('daily_guidance'))}
+          <div class="daily-definition">
+            <h3>${card.symbol} ${displayName} ${card.isReversed ? `<span class="reversed-label">(${t('card_reversed')})</span>` : ''}</h3>
+            <span class="card-astro">${card.element || ''} ${card.astrology ? '· ' + card.astrology : ''}</span>
+            <div class="daily-meaning">
+              <strong>${card.isReversed ? t('daily_reversed_meaning') : t('daily_upright_meaning')}:</strong>
+              <p>${meaning}</p>
+            </div>
+            <div class="daily-symbolism">
+              <strong>${t('daily_symbolism')}:</strong>
+              <p>"${symbolism}"</p>
+            </div>
+            <div class="keywords-list">${keywords.map(k => `<span>${k}</span>`).join('')}</div>
+            ${extraInfo}
+          </div>
           <div class="journal-note-area" id="dailyNoteArea">
             <textarea id="dailyNote" placeholder="${t('daily_note_placeholder')}"></textarea>
             <div class="btn-group" style="margin-top:12px;">
@@ -344,7 +367,7 @@
             </div>
           </div>
         `;
-        msg.classList.add('active');
+        msg.style.display = 'block';
         document.getElementById('dailyNoteArea').classList.add('active');
 
         // Store for journal save

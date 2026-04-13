@@ -460,6 +460,64 @@ section { position: relative; z-index: 1; padding: 100px 20px; }
   font-size: 0.8rem; color: var(--text-light);
 }
 
+/* ── Daily Definition Card ── */
+.daily-definition {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 32px 28px;
+  text-align: left;
+  animation: fadeInUp 0.5s ease-out;
+}
+.daily-definition h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 600;
+  color: var(--text-dark); margin-bottom: 4px;
+}
+.daily-definition h3 .reversed-label {
+  font-size: 0.9rem; color: var(--blush);
+}
+.daily-definition .card-astro {
+  display: block; font-size: 0.82rem; color: var(--text-light);
+  margin-bottom: 20px; letter-spacing: 1px;
+}
+.daily-definition .daily-meaning {
+  margin-bottom: 18px;
+}
+.daily-definition .daily-meaning strong,
+.daily-definition .daily-symbolism strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; color: var(--sage-dark);
+  letter-spacing: 0.5px;
+}
+.daily-definition .daily-meaning p {
+  margin-top: 6px; font-size: 0.95rem;
+  color: var(--text-mid); line-height: 1.7;
+}
+.daily-definition .daily-symbolism {
+  margin-bottom: 18px;
+  padding: 16px; background: var(--sand-pale);
+  border-radius: 12px; border-left: 3px solid var(--sage);
+}
+.daily-definition .daily-symbolism p {
+  margin-top: 6px; font-size: 0.9rem;
+  color: var(--text-mid); line-height: 1.6;
+  font-style: italic;
+}
+.daily-definition .keywords-list {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;
+}
+.daily-definition .keywords-list span {
+  background: var(--blush-pale); color: var(--blush);
+  padding: 4px 14px; border-radius: 20px;
+  font-size: 0.75rem; letter-spacing: 0.5px;
+}
+.daily-definition .qabalah-info {
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--glass-border);
+  font-size: 0.8rem; color: var(--text-light);
+}
+
 /* ── Card Library ── */
 #library { background: var(--cream-light); }
 .library-controls {
