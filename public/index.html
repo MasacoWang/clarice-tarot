@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✿ Clarice's Tarot — Inner Healing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── Botanical SVG Background ── -->
+<div class="botanical-bg">
+  <svg class="tl" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200 480 Q180 350 100 280 Q20 210 30 100 Q35 50 80 30" stroke="#9CAF88" stroke-width="2" fill="none"/>
+    <path d="M100 280 Q140 260 160 220 Q180 180 170 130" stroke="#9CAF88" stroke-width="1.5" fill="none"/>
+    <path d="M100 280 Q60 270 40 230 Q20 190 35 150" stroke="#9CAF88" stroke-width="1.5" fill="none"/>
+    <ellipse cx="160" cy="130" rx="20" ry="35" transform="rotate(-20 160 130)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <ellipse cx="35" cy="150" rx="18" ry="30" transform="rotate(15 35 150)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <ellipse cx="80" cy="30" rx="15" ry="25" transform="rotate(-10 80 30)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <circle cx="170" cy="120" r="4" fill="#D4C5A9" opacity="0.5"/>
+    <circle cx="38" cy="140" r="3" fill="#D4C5A9" opacity="0.5"/>
+    <path d="M200 480 Q220 400 260 350 Q300 300 320 220" stroke="#B5C4A3" stroke-width="1.5" fill="none"/>
+    <ellipse cx="320" cy="220" rx="16" ry="28" transform="rotate(25 320 220)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <path d="M260 350 Q230 330 210 290" stroke="#B5C4A3" stroke-width="1" fill="none"/>
+    <ellipse cx="210" cy="290" rx="12" ry="22" transform="rotate(-30 210 290)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+  </svg>
+  <svg class="tr" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200 480 Q180 350 100 280 Q20 210 30 100 Q35 50 80 30" stroke="#9CAF88" stroke-width="2" fill="none"/>
+    <path d="M100 280 Q140 260 160 220 Q180 180 170 130" stroke="#9CAF88" stroke-width="1.5" fill="none"/>
+    <ellipse cx="160" cy="130" rx="20" ry="35" transform="rotate(-20 160 130)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <circle cx="170" cy="120" r="4" fill="#D4C5A9" opacity="0.5"/>
+    <path d="M200 480 Q220 400 280 340" stroke="#B5C4A3" stroke-width="1.5" fill="none"/>
+    <ellipse cx="280" cy="340" rx="14" ry="26" transform="rotate(20 280 340)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+  </svg>
+  <svg class="bl" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M180 20 Q160 150 100 220 Q40 290 50 400" stroke="#9CAF88" stroke-width="2" fill="none"/>
+    <path d="M100 220 Q140 240 155 280 Q170 320 165 370" stroke="#9CAF88" stroke-width="1.5" fill="none"/>
+    <ellipse cx="165" cy="370" rx="18" ry="30" transform="rotate(10 165 370)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <path d="M100 220 Q60 240 50 280" stroke="#B5C4A3" stroke-width="1" fill="none"/>
+    <ellipse cx="50" cy="280" rx="14" ry="24" transform="rotate(-15 50 280)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <circle cx="55" cy="275" r="3" fill="#D4C5A9" opacity="0.5"/>
+  </svg>
+  <svg class="br" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M200 20 Q190 120 140 200 Q90 280 100 400" stroke="#9CAF88" stroke-width="2" fill="none"/>
+    <path d="M140 200 Q170 220 180 270" stroke="#B5C4A3" stroke-width="1.5" fill="none"/>
+    <ellipse cx="180" cy="270" rx="16" ry="28" transform="rotate(15 180 270)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+    <path d="M140 200 Q100 190 80 150" stroke="#B5C4A3" stroke-width="1" fill="none"/>
+    <ellipse cx="80" cy="150" rx="14" ry="24" transform="rotate(-20 80 150)" stroke="#D4A0A0" stroke-width="1" fill="none"/>
+  </svg>
+</div>
+
+<!-- ── Floating Particles ── -->
+<div class="particles" id="particles"></div>
+
+<!-- ── Navigation ── -->
+<nav>
+  <div class="logo">clarice's <span>tarot</span></div>
+  <ul class="nav-links">
+    <li><a href="#" data-page="home" data-i18n="nav_home">Home</a></li>
+    <li><a href="#" data-page="daily" data-i18n="nav_daily">Daily Card</a></li>
+    <li><a href="#" data-page="spreads" data-i18n="nav_spreads">Spreads</a></li>
+    <li><a href="#" data-page="library" data-i18n="nav_library">Library</a></li>
+    <li><a href="#" data-page="journal" data-i18n="nav_journal">Journal</a></li>
+    <li><a href="#" data-page="about" data-i18n="nav_about">About</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:12px;">
+    <div class="deck-toggle">
+      <button class="deck-btn active" data-deck="rw" data-i18n="deck_rw">Rider-Waite</button>
+      <button class="deck-btn" data-deck="thoth" data-i18n="deck_thoth">Thoth</button>
+    </div>
+    <div class="deck-toggle lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="zh">繁中</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-badge" data-i18n="hero_badge">✿ Gentle guidance for the soul</div>
+    <h1><span data-i18n="hero_title_1">Discover Your</span><br/><em data-i18n="hero_title_2">Inner Bloom</em></h1>
+    <p data-i18n="hero_desc">A moment of stillness, a card turned with intention. Let the gentle wisdom of the Tarot illuminate your path — in career, family, and the quiet corners of personal growth.</p>
+    <div class="hero-actions btn-group">
+      <button class="btn btn-primary" onclick="BloomTarot.navigate('daily')" data-i18n="hero_btn_daily">🌿 Draw Today's Card</button>
+      <button class="btn btn-secondary" onclick="BloomTarot.navigate('spreads')" data-i18n="hero_btn_spreads">✦ Explore Spreads</button>
+      <button class="btn btn-secondary" onclick="BloomTarot.navigate('library')" data-i18n="hero_btn_library">📖 Card Library</button>
+    </div>
+    <div class="scroll-indicator">⌄</div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: DAILY DRAW ═══ -->
+<div class="page" id="page-daily">
+  <section>
+    <div class="section-title fade-in">
+      <span class="section-subtitle" data-i18n="daily_subtitle">A moment of reflection</span>
+      <h2 data-i18n="daily_title">Your Daily Card</h2>
+      <span class="line"></span>
+      <p data-i18n="daily_desc">Draw a single card to set your intention and receive guidance for the day ahead. Breathe deeply, hold your question in mind, and tap.</p>
+    </div>
+    <div style="max-width:600px; margin:0 auto; text-align:center;" class="fade-in">
+      <div style="margin:40px auto; width:200px; height:345px; cursor:pointer; perspective:800px;">
+        <div class="tarot-card" id="dailyCard" style="width:200px; height:345px;">
+          <div class="card-inner">
+            <div class="card-face card-back">
+              <div class="card-back-pattern">
+                <span class="star">✿</span>
+                <span class="label" data-i18n="daily_tap">Tap to Reveal</span>
+              </div>
+            </div>
+            <div class="card-face card-front" id="dailyFront"></div>
+          </div>
+        </div>
+      </div>
+      <div id="dailyMessage" style="display:none; margin-top:30px; text-align:left;"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: SPREADS ═══ -->
+<div class="page" id="page-spreads">
+  <section style="background: var(--sand-pale);">
+    <div class="section-title fade-in">
+      <span class="section-subtitle" data-i18n="spreads_subtitle">Choose with intention</span>
+      <h2 data-i18n="spreads_title">Select Your Spread</h2>
+      <span class="line"></span>
+      <p data-i18n="spreads_desc">Each layout offers a different lens. Choose the one that speaks to where you are right now.</p>
+    </div>
+    <div class="spread-grid fade-in">
+      <div class="glass-card spread-card" onclick="BloomTarot.startReading('single')">
+        <span class="icon">🌸</span>
+        <h3 data-i18n="spread_single">Single Card</h3>
+        <p data-i18n="spread_single_desc">A quick, focused insight. Perfect for a daily check-in or a specific "yes or no" moment.</p>
+        <span class="card-count">1 <span data-i18n="spread_card">card</span></span>
+      </div>
+      <div class="glass-card spread-card" onclick="BloomTarot.startReading('three')">
+        <span class="icon">🌿</span>
+        <h3 data-i18n="spread_three">Past · Present · Future</h3>
+        <p data-i18n="spread_three_desc">Understand the arc of your story — the roots, the now, and where the current is carrying you.</p>
+        <span class="card-count">3 <span data-i18n="spread_cards">cards</span></span>
+      </div>
+      <div class="glass-card spread-card" onclick="BloomTarot.startReading('celtic')">
+        <span class="icon">🌙</span>
+        <h3 data-i18n="spread_celtic">Celtic Cross</h3>
+        <p data-i18n="spread_celtic_desc">The classic deep dive. Unveils the present, challenges, subconscious influences, and your highest potential outcome.</p>
+        <span class="card-count">10 <span data-i18n="spread_cards">cards</span></span>
+      </div>
+      <div class="glass-card spread-card" onclick="BloomTarot.startReading('choice')">
+        <span class="icon">🦋</span>
+        <h3 data-i18n="spread_choice">Two-Choice Path</h3>
+        <p data-i18n="spread_choice_desc">Standing at a crossroads? Illuminate both directions and see where each choice may lead.</p>
+        <span class="card-count">5 <span data-i18n="spread_cards">cards</span></span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: READING ═══ -->
+<div class="page" id="page-reading">
+  <section>
+    <div style="max-width:1100px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span class="section-subtitle" id="readingDeckLabel">Rider-Waite</span>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300;" id="readingTitle"></h2>
+        <p style="color:var(--text-mid); margin-top:8px;" id="readingSubtitle"></p>
+      </div>
+
+      <div id="cardSpread" class="card-spread"></div>
+      <div id="interpretation" class="interpretation"></div>
+
+      <!-- Journal note area (shown after all cards revealed) -->
+      <div class="journal-note-area" id="readingNoteArea">
+        <textarea id="readingNote" placeholder="Reflect on this reading... What resonates? What surprises you?" data-i18n-placeholder="reading_note_placeholder"></textarea>
+        <div class="btn-group" style="margin-top:12px;">
+          <button class="btn btn-sage btn-sm" onclick="BloomTarot.saveReadingToJournal()" data-i18n="reading_save">🌿 Save to Journal</button>
+        </div>
+      </div>
+
+      <div class="btn-group" style="margin-top:32px;">
+        <button class="btn btn-secondary" onclick="BloomTarot.resetReading()" data-i18n="reading_new">✿ New Reading</button>
+        <button class="btn btn-primary" onclick="BloomTarot.navigate('spreads')" data-i18n="reading_back">← Back to Spreads</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: LIBRARY ═══ -->
+<div class="page" id="page-library">
+  <section id="library">
+    <div class="section-title fade-in">
+      <span class="section-subtitle" data-i18n="library_subtitle">78 Cards · Two Traditions</span>
+      <h2 data-i18n="library_title">Card Library</h2>
+      <span class="line"></span>
+      <p data-i18n="library_desc">Explore the full deck — search by name, keyword, element, or astrological correspondence.</p>
+    </div>
+
+    <div class="library-controls fade-in">
+      <input type="text" class="search-box" id="librarySearch" data-i18n-placeholder="library_search" placeholder="Search cards, keywords, elements..." />
+      <button class="filter-btn active" data-filter="all" data-i18n="library_filter_all">All</button>
+      <button class="filter-btn" data-filter="major" data-i18n="library_filter_major">Major Arcana</button>
+      <button class="filter-btn" data-filter="wands" data-i18n="library_filter_wands">Wands</button>
+      <button class="filter-btn" data-filter="cups" data-i18n="library_filter_cups">Cups</button>
+      <button class="filter-btn" data-filter="swords" data-i18n="library_filter_swords">Swords</button>
+      <button class="filter-btn" data-filter="pentacles" data-i18n="library_filter_pentacles">Pentacles / Disks</button>
+      <button class="filter-btn" data-filter="court" data-i18n="library_filter_court">Court Cards</button>
+    </div>
+
+    <p class="library-count" id="libraryCount"></p>
+    <div class="library-grid" id="libraryGrid"></div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: JOURNAL ═══ -->
+<div class="page" id="page-journal">
+  <section id="journal" style="background: var(--sand-pale);">
+    <div class="section-title fade-in">
+      <span class="section-subtitle" data-i18n="journal_subtitle">Your personal reflection space</span>
+      <h2 data-i18n="journal_title">Reading Journal</h2>
+      <span class="line"></span>
+      <p data-i18n="journal_desc">Every reading saved here becomes a stepping stone on your journey of self-discovery.</p>
+    </div>
+    <div class="journal-entries fade-in" id="journalEntries"></div>
+  </section>
+</div>
+
+<!-- ═══ PAGE: ABOUT ═══ -->
+<div class="page" id="page-about">
+  <section id="about">
+    <div class="section-title fade-in">
+      <span class="section-subtitle" data-i18n="about_subtitle">Our philosophy</span>
+      <h2 data-i18n="about_title">About Clarice's Tarot</h2>
+      <span class="line"></span>
+      <p data-i18n="about_desc">A space created for reflection, not prediction. Tarot is a mirror — it shows you what already lives within.</p>
+    </div>
+    <div class="about-grid fade-in">
+      <div class="glass-card about-card">
+        <span class="icon">🌱</span>
+        <h3 data-i18n="about_intention_title">Rooted in Intention</h3>
+        <p data-i18n="about_intention_desc">Each reading begins with a breath. The cards don't tell the future — they illuminate the patterns, hopes, and wisdom you carry right now.</p>
+      </div>
+      <div class="glass-card about-card">
+        <span class="icon">🕊️</span>
+        <h3 data-i18n="about_gentle_title">Gentle & Affirming</h3>
+        <p data-i18n="about_gentle_desc">No fear, no doom. Whether you draw the Tower or the Star, every card is an invitation to grow. Our interpretations focus on healing and self-compassion.</p>
+      </div>
+      <div class="glass-card about-card">
+        <span class="icon">📖</span>
+        <h3 data-i18n="about_traditions_title">Two Great Traditions</h3>
+        <p data-i18n="about_traditions_desc">Choose between the intuitive Rider-Waite tradition and the esoteric depth of the Thoth deck. Both paths lead to clarity.</p>
+      </div>
+      <div class="glass-card about-card">
+        <span class="icon">🌿</span>
+        <h3 data-i18n="about_design_title">Designed with Care</h3>
+        <p data-i18n="about_design_desc">A calm, beautiful space to slow down. No ads, no data collection, no noise. Just you and the cards, in a moment of stillness.</p>
+      </div>
+      <div class="glass-card about-card">
+        <span class="icon">💼</span>
+        <h3 data-i18n="about_career_title">Career & Purpose</h3>
+        <p data-i18n="about_career_desc">Feeling stuck at work? Considering a change? Tarot can help you explore your relationship with ambition, fulfillment, and professional growth.</p>
+      </div>
+      <div class="glass-card about-card">
+        <span class="icon">🏡</span>
+        <h3 data-i18n="about_family_title">Family & Relationships</h3>
+        <p data-i18n="about_family_desc">The cards can shed light on family dynamics, communication patterns, and the love that sometimes gets lost in daily life.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── Card Detail Modal ── -->
+<div class="modal-overlay" id="cardModal">
+  <div class="modal-content" id="modalBody"></div>
+</div>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="logo-small">clarice's tarot — inner healing</div>
+  <p data-i18n="footer_tagline">Made with 🤍 and intention · A space for gentle self-reflection</p>
+  <p style="margin-top:6px; font-size:0.75rem;" data-i18n="footer_decks">Rider-Waite · Thoth · 78 Cards · Dual Deck System</p>
+</footer>
+
+<!-- ── Scripts ── -->
+<script src="js/i18n.js"></script>
+<script src="js/deck-rw.js"></script>
+<script src="js/deck-thoth.js"></script>
+<script src="js/lang-cards-rw-zh.js"></script>
+<script src="js/lang-cards-thoth-zh.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
