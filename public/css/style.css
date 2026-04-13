@@ -303,8 +303,9 @@ section { position: relative; z-index: 1; padding: 100px 20px; }
 .card-face {
   position: absolute; inset: 0;
   backface-visibility: hidden;
-  border-radius: 16px; overflow: hidden;
+  border-radius: 10px; overflow: hidden;
   box-shadow: var(--shadow-card);
+  box-sizing: border-box;
 }
 
 /* Card Back — Traditional */
@@ -344,6 +345,7 @@ section { position: relative; z-index: 1; padding: 100px 20px; }
   border: 1px solid #C4A97D;
   border-radius: 10px;
   pointer-events: none;
+  z-index: 1;
 }
 .card-front .card-numeral {
   font-family: 'Cormorant Garamond', serif;
